@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:text="Loans"
+            android:layout_marginTop="10dp"
+            android:textSize="22sp"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/white"/>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_add_circle_24dp" />
+
+
+
+
+</LinearLayout>
