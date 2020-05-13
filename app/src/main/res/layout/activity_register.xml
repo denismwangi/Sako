@@ -101,7 +101,6 @@
             android:id="@+id/btn_sign_up"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
             android:text="@string/sign_up"
             android:textSize="21sp"
             android:layout_marginStart="20dp"

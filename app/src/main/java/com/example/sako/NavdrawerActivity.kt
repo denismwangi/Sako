@@ -13,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.example.grindview.adapters.DashboardAdapters
 import com.example.grindview.model.DashboardItem
+import com.example.sako.storage.SharedPrefManager
 import com.example.sako.ui.AccountActivity
 import com.example.sako.ui.CirclesActivity
 import com.example.sako.ui.LoansActivity
@@ -177,6 +178,20 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
       // }
 
+    }
+
+    /**
+     *
+     * checking if user is logged in
+     */
+
+    override fun onStart() {
+        super.onStart()
+        if(!SharedPrefManager.getInstance(this)!!.isLoggedIn){
+            val intent = Intent(applicationContext, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
     }
 
 }

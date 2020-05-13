@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.View
 import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
 import com.example.sako.R
 import com.example.sako.adapters.AccountAdapters
@@ -40,21 +41,40 @@ class CirclesActivity : AppCompatActivity() {
         listView?.adapter = itemAdapters
       //  listView?.onItemClickListener = this
 
-        val btn = findViewById<Button>(R.id.btn_add_circle) as Button
 
-        btn.setOnClickListener{
+        val toolbar: Toolbar = findViewById(R.id.toolbar_circles)
+        setSupportActionBar(toolbar)
 
-            val intent = Intent(this, AddCirclesActivity::class.java )
-            startActivity(intent)
-        }
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar!!.title = "Circles"
 
-        //val fab: View = findViewById(R.id.add_fab)
-        //fab.setOnClickListener {
+        //actionbar
+        //val actionbar = supportActionBar
+        //set actionbar title
+        // actionbar?.title = "Loans"
+
+        //set back button
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
+      //  val btn = findViewById<Button>(R.id.btn_add_circle) as Button
+
+      //  btn.setOnClickListener{
+
+         //   val intent = Intent(this, AddCirclesActivity::class.java )
+         //   startActivity(intent)
+       // }
+
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener {
                 //view ->
            // Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
             //    .setAction("Action", null)
               //  .show()
-        //}
+            val intent = Intent(this, AddCirclesActivity::class.java )
+              startActivity(intent)
+        }
 
        /** search.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
 
@@ -103,5 +123,9 @@ class CirclesActivity : AppCompatActivity() {
         }
 
 
-
+//back arrow button function to return toolbar
+override fun onSupportNavigateUp(): Boolean {
+    onBackPressed()
+    return true
+}
 }

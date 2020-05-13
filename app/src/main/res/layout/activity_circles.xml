@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3E5F5"
     tools:context=".ui.CirclesActivity">
 
 
@@ -13,42 +14,42 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:background="@color/colorAccent"
         android:theme="@style/AppTheme.AppBarOverlay">
 
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_circles"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:text="Circles"
-            android:layout_marginTop="10dp"
-            android:textSize="22sp"
-            android:layout_marginLeft="50dp"
-            android:textColor="@color/white"/>
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
 
 
     </com.google.android.material.appbar.AppBarLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="170dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        android:layout_marginLeft="3dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >
 
-    <SearchView
-        android:id="@+id/search_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        />
-    <Button
-        android:id="@+id/btn_add_circle"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Create Circle"
-        android:textSize="21sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:backgroundTint="@color/colorAccent"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/ic_add_black_24dp"
+            />
 
-        />
+    </androidx.cardview.widget.CardView>
+
+
+
 
         <ListView
             android:layout_width="match_parent"

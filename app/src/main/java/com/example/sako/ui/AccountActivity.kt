@@ -6,9 +6,11 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.sako.R
 import com.example.sako.adapters.AccountAdapters
 import com.example.sako.model.AccountList
+import kotlinx.android.synthetic.main.app_bar_navdrawer.*
 
 class AccountActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
 
@@ -25,6 +27,23 @@ class AccountActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
         itemAdapters = AccountAdapters(applicationContext , arrayList!!)
         listView?.adapter = itemAdapters
         listView?.onItemClickListener = this
+
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar_account)
+        setSupportActionBar(toolbar)
+
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar!!.title = "Loans"
+
+        //actionbar
+        //val actionbar = supportActionBar
+        //set actionbar title
+        // actionbar?.title = "Loans"
+
+        //set back button
+        actionBar.setDisplayHomeAsUpEnabled(true)
+        actionBar.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setDataItem(): ArrayList<AccountList> {
@@ -55,5 +74,11 @@ class AccountActivity : AppCompatActivity(),AdapterView.OnItemClickListener {
         var items: AccountList = arrayList?.get(position)!!
         Toast.makeText(applicationContext, items.title, Toast.LENGTH_SHORT).show()
 
+    }
+
+    //back arrow button function to return toolbar
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
