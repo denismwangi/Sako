@@ -1,3 +1,3 @@
 #sako
-![](Sako/login.png)
+![](login.png)
 
