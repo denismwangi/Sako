@@ -32,51 +32,51 @@ class LoginActivity : AppCompatActivity() {
         }
 
         Btn.setOnClickListener{
-          // val intent = Intent(this,NavdrawerActivity::class.java)
-            //startActivity(intent)
+           val intent = Intent(this,NavdrawerActivity::class.java)
+            startActivity(intent)
 
 
-            val phone = tv_phoneno.text.toString().trim()
-            val password = tv_password.text.toString().trim()
+//            val phone = tv_phoneno.text.toString().trim()
+//            val password = tv_password.text.toString().trim()
+//
+//            if (phone.isEmpty()){
+//                tv_firstname.error = "firstname is required"
+//                tv_firstname.requestFocus()
+//                return@setOnClickListener
+//            }
+//            if (password.isEmpty()){
+//                tv_lastname.error = "lastname is required"
+//                tv_lastname.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            RetrofitRegistration.instance.userLogin(phone ,password)
+//                .enqueue(object: Callback<LoginResponse>{
+//                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+//
+//                    }
+//
+//                    override fun onResponse(
+//                        call: Call<LoginResponse>,
+//                        response: Response<LoginResponse>
+//                    ) {
+//
+//                        if (!response.body()?.error!!){
+//
+//                            SharedPrefManager.getInstance(applicationContext)?.saveUser(response.body()?.user!!)
+//
+//                            val intent = Intent(applicationContext, NavdrawerActivity::class.java)
+//                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                            startActivity(intent)
+//                        }else{
+//                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG ).show()
+//                        }
+//
+//                    }
 
-            if (phone.isEmpty()){
-                tv_firstname.error = "firstname is required"
-                tv_firstname.requestFocus()
-                return@setOnClickListener
-            }
-            if (password.isEmpty()){
-                tv_lastname.error = "lastname is required"
-                tv_lastname.requestFocus()
-                return@setOnClickListener
-            }
 
-            RetrofitRegistration.instance.userLogin(phone ,password)
-                .enqueue(object: Callback<LoginResponse>{
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-
-                    }
-
-                    override fun onResponse(
-                        call: Call<LoginResponse>,
-                        response: Response<LoginResponse>
-                    ) {
-
-                        if (!response.body()?.error!!){
-
-                            SharedPrefManager.getInstance(applicationContext)?.saveUser(response.body()?.user!!)
-
-                            val intent = Intent(applicationContext, NavdrawerActivity::class.java)
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                            startActivity(intent)
-                        }else{
-                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG ).show()
-                        }
-
-                    }
-
-
-                })
+  //              })
         }
 
 
