@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.GridView
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.GravityCompat
 import com.example.grindview.adapters.DashboardAdapters
 import com.example.grindview.model.DashboardItem
@@ -30,20 +31,14 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navdrawer)
 
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        gridView = this.findViewById(R.id.my_grind_list)
-        arrayList = ArrayList()
-        arrayList = setDataLIst()
-        dashboardAdapters = DashboardAdapters(applicationContext, arrayList!!)
-         gridView?.adapter = dashboardAdapters
-         gridView?.onItemClickListener = this
+//
+//        val toolbar: Toolbar = findViewById(R.id.toolbar)
+//        setSupportActionBar(toolbar)
 
 
-        setSupportActionBar(toolbar)
-        var actionBar = supportActionBar
-        actionBar?.title = "Home"
+//        setSupportActionBar(toolbar)
+//        var actionBar = supportActionBar
+//        actionBar?.title = "Home"
 
         /**
          * closing and open drawer
@@ -53,7 +48,7 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         var drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
             this,
             drawer_layout,
-            toolbar,
+//           toolbar,
             (R.string.open),
             (R.string.close)
 
@@ -185,13 +180,13 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
      * checking if user is logged in
      */
 
-    override fun onStart() {
-        super.onStart()
-        if(!SharedPrefManager.getInstance(this)!!.isLoggedIn){
-            val intent = Intent(applicationContext, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        if(!SharedPrefManager.getInstance(this)!!.isLoggedIn){
+//            val intent = Intent(applicationContext, LoginActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//            startActivity(intent)
+//        }
+//    }
 
 }

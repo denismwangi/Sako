@@ -14,24 +14,24 @@ import retrofit2.http.POST
  */
 interface RegistrationApi {
 
-    @FormUrlEncoded
-    @POST(  "createdUser")
-    fun createUser(
-
-        @Field("firstname") firstname:String,
-        @Field("lastname") lastname:String,
-        @Field("phone") phone:String,
-        @Field("password") password:String,
-        @Field("password2") password2:String
-
-    ):Call<RegistrationResponse>
-
-    @FormUrlEncoded
-    @POST("userLogin")
-
-    fun userLogin(
-        @Field("phone") phone:String,
-        @Field("password") password:String
-     ):Call<LoginResponse>
+//    @FormUrlEncoded
+//    @POST(  "createdUser")
+//    fun createUser(
+//
+//        @Field("firstname") firstname:String,
+//        @Field("lastname") lastname:String,
+//        @Field("phone") phone:String,
+//        @Field("password") password:String,
+//        @Field("password2") password2:String
+//
+//    ):Call<RegistrationResponse>
+//
+//    @FormUrlEncoded
+//    @POST("userLogin")
+//
+//    fun userLogin(
+//        @Field("phone") phone:String,
+//        @Field("password") password:String
+//     ):Call<LoginResponse>
 
 }

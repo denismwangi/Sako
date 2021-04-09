@@ -86,13 +86,13 @@ class LoginActivity : AppCompatActivity() {
      *
      * checking if user is logged in
      */
-
-    override fun onStart() {
-        super.onStart()
-        if(SharedPrefManager.getInstance(this)!!.isLoggedIn){
-            val intent = Intent(applicationContext, NavdrawerActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-        }
-    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        if(SharedPrefManager.getInstance(this)!!.isLoggedIn){
+//            val intent = Intent(applicationContext, NavdrawerActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//            startActivity(intent)
+//        }
+//    }
 }

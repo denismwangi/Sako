@@ -62,7 +62,7 @@ class ViewpagerActivity : AppCompatActivity() {
             if (introSliderViewPager.currentItem + 1 < introSliderAdapter.itemCount) {
                 introSliderViewPager.currentItem += 1
             } else {
-                Intent(applicationContext, LoginActivity::class.java).also {
+                Intent(applicationContext, NavdrawerActivity::class.java).also {
                     startActivity(it)
                     finish()
                 }
