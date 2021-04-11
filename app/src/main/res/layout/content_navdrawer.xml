@@ -68,7 +68,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="#6E22C6"
+            app:cardBackgroundColor="#fff"
             app:cardCornerRadius="7dp"
             app:cardElevation="5dp"
             app:cardPreventCornerOverlap="true"
@@ -80,7 +80,6 @@
                 android:paddingLeft="40dp"
                 android:paddingTop="20dp"
                 android:text="Total Balance"
-                android:textColor="#fff"
                 android:textSize="22dp" />
 
             <TextView
@@ -91,7 +90,6 @@
                 android:paddingLeft="40dp"
                 android:paddingTop="10dp"
                 android:text="$3,729.00"
-                android:textColor="#fff"
                 android:textSize="35dp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -126,6 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="10dp"
+                app:cardElevation="0dp"
 
                >
 
@@ -137,20 +136,20 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/account"
+                        android:layout_below="@id/save"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Account"
+                        android:text="Circles"
                         android:textSize="14sp" />
 
                     <ImageView
-                        android:id="@+id/account"
+                        android:id="@+id/save"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/rounded_cards"
-                        app:srcCompat="@drawable/accounticon" />
+                        app:srcCompat="@drawable/circles" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -158,7 +157,8 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="200dp"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                app:cardElevation="0dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -168,20 +168,20 @@
                         android:id="@+id/textView60"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/circleimg"
+                        android:layout_below="@id/loanimg"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="ciicles"
+                        android:text="Loans"
                         android:textSize="14sp" />
 
                     <ImageView
-                        android:id="@+id/circleimg"
+                        android:id="@+id/loanimg"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/rounded_cards"
-                        app:srcCompat="@drawable/circles" />
+                        app:srcCompat="@drawable/loans" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -194,7 +194,9 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="70dp"
-                            android:layout_marginTop="10dp">
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="12dp"
+                            app:cardElevation="0dp">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
@@ -205,7 +207,7 @@
                                     android:layout_below="@id/imageView3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
-                                    android:text="savings"
+                                    android:text="Top Up"
                                     android:textSize="14sp"
                                     />
                                 <ImageView
@@ -214,7 +216,7 @@
                                     android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    app:srcCompat="@drawable/savehome"
+                                    app:srcCompat="@drawable/recharge"
                                     android:background="@drawable/rounded_cards"/>
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
@@ -222,7 +224,9 @@
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="70dp"
-                        android:layout_marginTop="15dp">
+                        android:layout_marginTop="15dp"
+                        app:cardElevation="0dp"
+                        android:layout_marginBottom="12dp">
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
@@ -233,7 +237,7 @@
                                 android:layout_below="@id/imageView5"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="10dp"
-                                android:text="savings"
+                                android:text="Withdraw"
                                 android:textSize="14sp"
                                 />
                             <ImageView
@@ -242,7 +246,7 @@
                                 android:layout_height="50dp"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="15dp"
-                                app:srcCompat="@drawable/savehome"
+                                app:srcCompat="@drawable/recieve"
                                 android:background="@drawable/rounded_cards"/>
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
