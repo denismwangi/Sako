@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,8 +25,7 @@ import com.amulyakhare.textdrawable.TextDrawable
 import android.graphics.Color
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.ImageView
+import android.widget.*
 import androidx.appcompat.widget.SearchView
 import java.util.*
 import kotlin.collections.ArrayList
@@ -38,7 +35,7 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
 
     lateinit var saccos: ArrayList<CirclesList>
-    var displayList = ArrayList<CirclesList>()
+    lateinit var displayList : ArrayList<CirclesList>
     private val API_URL = "http://api.sakoapp.co.ke/api/allsaccos"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,16 +43,17 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
         setContentView(R.layout.activity_circles)
 
         saccos  = ArrayList()
+        displayList = ArrayList()
         getCircles()
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.addItemDecoration(DividerItemDecoration(this, 1))
+        recyclerView.addItemDecoration(DividerItemDecoration(this, 0))
         //onclick listener
-        recyclerView.adapter = CirclesAdapters(saccos, this)
+        recyclerView.adapter = CirclesAdapters(saccos, this, this)
         //search
-        displayList.addAll(saccos)
-        recyclerView.adapter = CirclesAdapters(displayList, this)
+
+        recyclerView.adapter = CirclesAdapters(displayList, this, this)
 
     }
 
@@ -92,8 +90,10 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
                    }
 
-                   val adapter = CirclesAdapters(saccos,this)
+                   val adapter = CirclesAdapters(saccos,this,this)
                    recyclerView.setAdapter(adapter)
+                   displayList.addAll(saccos)
+
 
                } catch (e: JSONException) {
                    e.printStackTrace()
@@ -129,16 +129,14 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
         val menuItem = menu!!.findItem(R.id.search_menu)
         if(menuItem != null){
             val searchView = menuItem.actionView as SearchView
-            val editText = searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
+            val editText = searchView.findViewById(androidx.appcompat.R.id.search_src_text)as TextView
             editText.hint = "Search......."
-
             searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     return true
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-
                     if (newText!!.isEmpty()){
                         displayList.clear()
                         val search = newText.toLowerCase(Locale.getDefault())
@@ -148,7 +146,8 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
                             }
                         }
                         recyclerView.adapter!!.notifyDataSetChanged()
-                    }else{
+                    }
+                    else{
                         displayList.clear()
                         displayList.addAll(saccos)
                         recyclerView.adapter!!.notifyDataSetChanged()

@@ -35,4 +35,5 @@
     <string name="sacco_title">sacco Title</string>
     <string name="time_of_contribution">time of contribution</string>
     <string name="amount">amount</string>
+    <string name="all_circles">Circles</string>
 </resources>

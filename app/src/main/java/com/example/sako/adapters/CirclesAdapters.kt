@@ -1,5 +1,6 @@
 package com.example.sako.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import com.example.sako.model.CirclesList
 import kotlinx.android.synthetic.main.circles_list.view.*
 
 
-class CirclesAdapters(val circles: ArrayList<CirclesList>,var clickListner: onCircleClickListener) : RecyclerView.Adapter<CirclesAdapters.ViewHolder>(){
+class CirclesAdapters(val circles: ArrayList<CirclesList>,var clickListner: onCircleClickListener, var context:Context) : RecyclerView.Adapter<CirclesAdapters.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CirclesAdapters.ViewHolder {
