@@ -33,4 +33,6 @@
     <string name="menu_share">share</string>
     <string name="circle_desciption">circle desciption</string>
     <string name="sacco_title">sacco Title</string>
+    <string name="time_of_contribution">time of contribution</string>
+    <string name="amount">amount</string>
 </resources>

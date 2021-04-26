@@ -23,11 +23,22 @@ import kotlinx.android.synthetic.main.nav_header_navdrawer.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import com.amulyakhare.textdrawable.TextDrawable
+import android.graphics.Color
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.EditText
+import android.widget.ImageView
+import androidx.appcompat.widget.SearchView
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
 
     lateinit var saccos: ArrayList<CirclesList>
+    var displayList = ArrayList<CirclesList>()
     private val API_URL = "http://api.sakoapp.co.ke/api/allsaccos"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +51,12 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(this, 1))
-
+        //onclick listener
         recyclerView.adapter = CirclesAdapters(saccos, this)
+        //search
+        displayList.addAll(saccos)
+        recyclerView.adapter = CirclesAdapters(displayList, this)
+
     }
 
    private fun getCircles(){
@@ -106,6 +121,49 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
         startActivity(intent)
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_search, menu)
+        val menuItem = menu!!.findItem(R.id.search_menu)
+        if(menuItem != null){
+            val searchView = menuItem.actionView as SearchView
+            val editText = searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
+            editText.hint = "Search......."
+
+            searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+
+                    if (newText!!.isEmpty()){
+                        displayList.clear()
+                        val search = newText.toLowerCase(Locale.getDefault())
+                        saccos.forEach{
+                            if (it.name.toLowerCase(Locale.getDefault()).contains(search)){
+                                displayList.add(it)
+                            }
+                        }
+                        recyclerView.adapter!!.notifyDataSetChanged()
+                    }else{
+                        displayList.clear()
+                        displayList.addAll(saccos)
+                        recyclerView.adapter!!.notifyDataSetChanged()
+                    }
+                    return true
+
+                }
+
+            })
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
 
