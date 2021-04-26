@@ -31,4 +31,6 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="menu_share">share</string>
+    <string name="circle_desciption">circle desciption</string>
+    <string name="sacco_title">sacco Title</string>
 </resources>

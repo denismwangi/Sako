@@ -1,13 +1,8 @@
 package com.example.sako.model
 
-class CirclesList {
-    //var icons:Int ? = 0
-    var title:String ? = null
-    var detail:String ? = null
-
-    constructor( title: String?, detail: String?) {
-        //  this.icons = icons
-        this.title = title
-        this.detail = detail
-    }
-}
+data class CirclesList(
+    val name:String,
+    val description:String,
+    val time_of_contribution:String,
+    val min_to_contribute:String
+)

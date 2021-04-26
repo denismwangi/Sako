@@ -1,46 +1,55 @@
 package com.example.sako.adapters
 
-import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sako.R
-import com.example.sako.model.AccountList
+import com.example.sako.interfaces.onCircleClickListener
 import com.example.sako.model.CirclesList
+import kotlinx.android.synthetic.main.circles_list.view.*
 
-class CirclesAdapters(var context: Context, var arrayList: ArrayList<CirclesList>): BaseAdapter(){
+
+class CirclesAdapters(val circles: ArrayList<CirclesList>,var clickListner: onCircleClickListener) : RecyclerView.Adapter<CirclesAdapters.ViewHolder>(){
 
 
-    override fun getItem(position: Int): Any {
-        return arrayList.get(position)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CirclesAdapters.ViewHolder {
+        lateinit var circlesViewHolder : RecyclerView.ViewHolder
+        circlesViewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.circles_list,parent,false ))
+        return circlesViewHolder
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
+    override fun getItemCount(): Int {
+        return circles.size
     }
 
-    override fun getCount(): Int {
-        return arrayList.size
+    override fun onBindViewHolder(holder: CirclesAdapters.ViewHolder, position: Int) {
+        holder.initialize(circles.get(position),clickListner)
     }
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view:View = View.inflate(context , R.layout.circles_cardview, null)
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        var name = itemView.circlename
+        var description = itemView.circledescription
+        var time_contrib = itemView.time_contrib
+        var amount = itemView.amount
+
+        fun initialize(sacco: CirclesList, action:onCircleClickListener) {
+
+            name.text = sacco.name
+            description.text = sacco.description
+            time_contrib.text = sacco.time_of_contribution
+            amount.text = sacco.min_to_contribute
 
 
 
-        // var icons:ImageView = view.findViewById(R.id.icon_list)
-        var title: TextView = view.findViewById(R.id.title_text)
-        var detail: TextView = view.findViewById(R.id.detail_text)
+            itemView.setOnClickListener {
+                action.onItemClick(sacco,adapterPosition)
+            }
 
-        var items: CirclesList = arrayList.get(position)
 
-        //      icons.setImageResource(items.icons!!)
-        title.text = items.title
-        detail.text = items.detail
 
-        return view
-
+        }
     }
 
 
