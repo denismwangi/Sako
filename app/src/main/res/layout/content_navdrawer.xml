@@ -74,7 +74,7 @@
             android:layout_height="match_parent"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="7dp"
-            app:cardElevation="5dp"
+            app:cardElevation="0dp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true">
 
@@ -119,6 +119,7 @@
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true">
 
