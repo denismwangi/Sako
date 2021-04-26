@@ -8,24 +8,33 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.GridView
+import android.widget.ImageView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.example.grindview.adapters.DashboardAdapters
 import com.example.grindview.model.DashboardItem
 import com.example.sako.ui.AccountActivity
+import com.example.sako.ui.CirclesActivity
 import com.example.sako.ui.LoansActivity
 import com.example.sako.ui.SavingsActivity
 import kotlinx.android.synthetic.main.activity_navdrawer.*
 
-class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
+class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
-     private var arrayList: ArrayList<DashboardItem>? = null
-     private var gridView: GridView? = null
-    private var dashboardAdapters: DashboardAdapters? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navdrawer)
+
+        val cirleImg  = findViewById(R.id.circleImg) as ImageView
+
+        cirleImg.setOnClickListener{
+            val intent = Intent(this,CirclesActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
 //
 //        val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -115,66 +124,9 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         }
     }
 
-    //function that display all the arraylist items
-    private fun setDataLIst() : ArrayList<DashboardItem>{
-
-        var arrayList:ArrayList<DashboardItem> = ArrayList()
-
-        arrayList.add(DashboardItem(R.drawable.accounticon, "My Account"))
-        arrayList.add(DashboardItem(R.drawable.circles, "Circles"))
-        arrayList.add(DashboardItem(R.drawable.saveicon, "Savings"))
-        arrayList.add(DashboardItem(R.drawable.loan1, "Loans"))
-        //arrayList.add(LanguageItem(R.drawable.book, "book"))
 
 
-        return arrayList
-    }
 
-
-    /**
-    * implementing oncliclistener to open other activities once arraylist item is clicked
-    * dennis 27/04/2020
-    *
-     * */
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-        //var items:LanguageItem = arrayList!!.get(position)
-       if(position==0){
-           val intent = Intent(this,AccountActivity::class.java)
-           startActivity(intent)
-       }
-        else if(position==1){
-           val intent = Intent(this,CirclesActivity::class.java)
-           startActivity(intent)
-
-        }
-        else if(position==2){
-
-           val intent = Intent(this,SavingsActivity::class.java)
-           startActivity(intent)
-       }
-        else if(position == 3){
-           //this.startActivity(Intent(this, LoansActivity::class.java))
-           //return true
-
-           val intent = Intent(this,LoansActivity::class.java)
-           startActivity(intent)
-
-
-       }
-       // else if(position == 5){
-
-      // }
-      //  else if(position == 6){
-
-      // }
-
-    }
-
-    /**
-     *
-     * checking if user is logged in
-     */
 
 //    override fun onStart() {
 //        super.onStart()
