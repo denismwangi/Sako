@@ -29,7 +29,7 @@
 
             <ImageView
                 android:id="@+id/coverImage"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
@@ -39,7 +39,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/circles" />
+                app:srcCompat="@drawable/member" />
 
             <TextView
                 android:id="@+id/circlename"
@@ -50,7 +50,6 @@
                 android:text="@string/sacco_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#516b9e"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -65,7 +64,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@string/circle_desciption"
-                android:textColor="#516b9e"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/coverImage"

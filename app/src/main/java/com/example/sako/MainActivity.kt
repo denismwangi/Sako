@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler().postDelayed(
             {
-                startActivity(Intent(this,ViewpagerActivity::class.java))
+                startActivity(Intent(this,NavdrawerActivity::class.java))
                 finish()
 
             }, TIME_OUT.toLong())

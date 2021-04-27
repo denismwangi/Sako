@@ -36,4 +36,12 @@
     <string name="time_of_contribution">time of contribution</string>
     <string name="amount">amount</string>
     <string name="all_circles">Circles</string>
+    <string name="interest_rate">interest rate</string>
+    <string name="_4">4%</string>
+    <string name="min_to_contribute">min to contribute</string>
+    <string name="_100_0">100.0</string>
+    <string name="members">members</string>
+    <string name="top_up">Top Up</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="loans">Loans</string>
 </resources>

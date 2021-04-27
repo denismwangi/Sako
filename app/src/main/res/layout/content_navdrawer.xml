@@ -154,7 +154,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/rounded_cards"
-                        app:srcCompat="@drawable/circles" />
+                        app:srcCompat="@drawable/member" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -176,7 +176,7 @@
                         android:layout_below="@id/loanimg"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:text="Loans"
+                        android:text="@string/loans"
                         android:textSize="14sp" />
 
                     <ImageView
@@ -186,7 +186,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/rounded_cards"
-                        app:srcCompat="@drawable/loans" />
+                        app:srcCompat="@drawable/loan_wallet" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -212,7 +212,7 @@
                                     android:layout_below="@id/imageView3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
-                                    android:text="Top Up"
+                                    android:text="@string/top_up"
                                     android:textSize="14sp"
                                     />
                                 <ImageView
@@ -221,7 +221,7 @@
                                     android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="15dp"
-                                    app:srcCompat="@drawable/recharge"
+                                    app:srcCompat="@drawable/deposit"
                                     android:background="@drawable/rounded_cards"/>
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
@@ -242,7 +242,7 @@
                                 android:layout_below="@id/imageView5"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="10dp"
-                                android:text="Withdraw"
+                                android:text="@string/withdraw"
                                 android:textSize="14sp"
                                 />
                             <ImageView
@@ -251,7 +251,7 @@
                                 android:layout_height="50dp"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="15dp"
-                                app:srcCompat="@drawable/recieve"
+                                app:srcCompat="@drawable/card"
                                 android:background="@drawable/rounded_cards"/>
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>

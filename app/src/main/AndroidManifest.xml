@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.CircleDetailsActivity"></activity>
+        <activity android:name=".ui.CircleDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.CirclesActivity"
-            android:label="@string/all_circles"
+            android:theme="@style/AppTheme.NoActionBar"
             />
         <activity android:name=".ui.AddCirclesActivity" />
         <activity android:name=".ui.AccountActivity" />
