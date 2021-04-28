@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.AccountActivity"></activity>
+        <activity android:name=".ui.LoansActivity"></activity>
+        <activity
+            android:name=".ui.AccountActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.TransactionsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -24,7 +27,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.AddCirclesActivity" />
         <activity android:name=".ui.SavingsActivity" />
-        <activity android:name=".ui.LoansActivity" />
         <activity
             android:name=".NavdrawerActivity"
             android:label="@string/title_activity_navdrawer"

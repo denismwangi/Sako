@@ -84,7 +84,7 @@
                 android:paddingLeft="40dp"
                 android:paddingTop="10dp"
                 android:text="Ksh 3,729.00"
-                android:textSize="35dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 

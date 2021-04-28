@@ -26,6 +26,8 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         val cirleImg  = findViewById(R.id.circleImg) as ImageView
         val topUpImg = findViewById<ImageView>(R.id.image_topup)
+        val witdrawImg = findViewById<ImageView>(R.id.imageWithdraw)
+
 
         cirleImg.setOnClickListener{
             val intent = Intent(this,CirclesActivity::class.java)
@@ -33,6 +35,10 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         }
        topUpImg.setOnClickListener{
             val intent = Intent(this,TransactionsActivity::class.java)
+            startActivity(intent)
+        }
+        witdrawImg.setOnClickListener{
+            val intent = Intent(this,AccountActivity::class.java)
             startActivity(intent)
         }
 
