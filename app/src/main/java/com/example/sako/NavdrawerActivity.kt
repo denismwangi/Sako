@@ -13,10 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.example.grindview.adapters.DashboardAdapters
 import com.example.grindview.model.DashboardItem
-import com.example.sako.ui.AccountActivity
-import com.example.sako.ui.CirclesActivity
-import com.example.sako.ui.LoansActivity
-import com.example.sako.ui.SavingsActivity
+import com.example.sako.ui.*
 import kotlinx.android.synthetic.main.activity_navdrawer.*
 
 class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -28,9 +25,14 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         setContentView(R.layout.activity_navdrawer)
 
         val cirleImg  = findViewById(R.id.circleImg) as ImageView
+        val topUpImg = findViewById<ImageView>(R.id.image_topup)
 
         cirleImg.setOnClickListener{
             val intent = Intent(this,CirclesActivity::class.java)
+            startActivity(intent)
+        }
+       topUpImg.setOnClickListener{
+            val intent = Intent(this,TransactionsActivity::class.java)
             startActivity(intent)
         }
 

@@ -12,32 +12,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.CircleDetailsActivity"
+        <activity android:name=".ui.AccountActivity"></activity>
+        <activity
+            android:name=".ui.TransactionsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.CirclesActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+        <activity
+            android:name=".ui.CircleDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.CirclesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.AddCirclesActivity" />
-        <activity android:name=".ui.AccountActivity" />
         <activity android:name=".ui.SavingsActivity" />
         <activity android:name=".ui.LoansActivity" />
         <activity
             android:name=".NavdrawerActivity"
             android:label="@string/title_activity_navdrawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegisterActivity"
+        <activity
+            android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewpagerActivity"
+        <activity
+            android:name=".ViewpagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

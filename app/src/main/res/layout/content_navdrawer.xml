@@ -5,21 +5,22 @@
     android:id="@+id/constl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_navdrawer">
+    tools:showIn="@layout/app_bar_navdrawer"
+    android:background="#F4F7FD">
 
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:paddingLeft="25dp"
         android:paddingTop="10dp"
         android:paddingRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/all_background">
 
         <TextView
             android:id="@+id/t1"
@@ -59,14 +60,14 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.10">
 
         <androidx.cardview.widget.CardView
@@ -93,7 +94,7 @@
                 android:fontFamily="sans-serif-black"
                 android:paddingLeft="40dp"
                 android:paddingTop="10dp"
-                android:text="$3,729.00"
+                android:text="Ksh 3,729.00"
                 android:textSize="35dp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -209,14 +210,14 @@
                                     android:id="@+id/textView4"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/imageView3"
+                                    android:layout_below="@id/image_topup"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:text="@string/top_up"
                                     android:textSize="14sp"
                                     />
                                 <ImageView
-                                    android:id="@+id/imageView3"
+                                    android:id="@+id/image_topup"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"

@@ -23,10 +23,13 @@ import org.json.JSONException
 import org.json.JSONObject
 import com.amulyakhare.textdrawable.TextDrawable
 import android.graphics.Color
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.widget.SearchView
+import androidx.core.widget.addTextChangedListener
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -35,15 +38,15 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
 
     lateinit var saccos: ArrayList<CirclesList>
-    lateinit var displayList : ArrayList<CirclesList>
     private val API_URL = "http://api.sakoapp.co.ke/api/allsaccos"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circles)
 
+        val search_text = findViewById<EditText>(R.id.search)
+
         saccos  = ArrayList()
-        displayList = ArrayList()
         getCircles()
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
@@ -53,11 +56,14 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
         recyclerView.adapter = CirclesAdapters(saccos, this, this)
         //search
 
-        recyclerView.adapter = CirclesAdapters(displayList, this, this)
+
 
     }
 
-   private fun getCircles(){
+
+
+
+    private fun getCircles(){
 
        val progressBar = findViewById<View>(R.id.progressBar) as ProgressBar
        //making the progressbar visible
@@ -92,7 +98,6 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
                    val adapter = CirclesAdapters(saccos,this,this)
                    recyclerView.setAdapter(adapter)
-                   displayList.addAll(saccos)
 
 
                } catch (e: JSONException) {
@@ -123,47 +128,6 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        menuInflater.inflate(R.menu.menu_search, menu)
-        val menuItem = menu!!.findItem(R.id.search_menu)
-        if(menuItem != null){
-            val searchView = menuItem.actionView as SearchView
-            val editText = searchView.findViewById(androidx.appcompat.R.id.search_src_text)as TextView
-            editText.hint = "Search......."
-            searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return true
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    if (newText!!.isEmpty()){
-                        displayList.clear()
-                        val search = newText.toLowerCase(Locale.getDefault())
-                        saccos.forEach{
-                            if (it.name.toLowerCase(Locale.getDefault()).contains(search)){
-                                displayList.add(it)
-                            }
-                        }
-                        recyclerView.adapter!!.notifyDataSetChanged()
-                    }
-                    else{
-                        displayList.clear()
-                        displayList.addAll(saccos)
-                        recyclerView.adapter!!.notifyDataSetChanged()
-                    }
-                    return true
-
-                }
-
-            })
-        }
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-    }
 
 
 }
