@@ -15,4 +15,8 @@
         <item name="android:layout_marginRight">4dp</item>
         <item name="android:layout_marginBottom">60dp</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

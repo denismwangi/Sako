@@ -35,13 +35,13 @@ class TransactionsActivity : AppCompatActivity() {
     }
 
     private fun addTransactions() {
-        transactions.add(Transactions("Chama Yetu", "Ksh 6,999","12.00 pm"))
-        transactions.add(Transactions("Gitati", "Ksh 200","4.00 pm"))
-        transactions.add(Transactions("Vijana Kazi", "Ksh 1,200","9.00 am"))
-        transactions.add(Transactions("Safaricom Offers", "Ksh 200","2.00 am"))
-        transactions.add(Transactions("Test Chama", "Ksh 1,200","9.00 pm"))
-        transactions.add(Transactions(" Kazi Yetu", "Ksh 1,200","9.00 am"))
-        transactions.add(Transactions("Vijana Kazi", "Ksh 1,200","9.00 am"))
+        transactions.add(Transactions("Chama Yetu", "- Ksh 6,999","4.00 pm"))
+        transactions.add(Transactions("Gitati", "+ Ksh 200","2.00 pm"))
+        transactions.add(Transactions("Vijana Kazi", "+ Ksh 1,200","9.00 am"))
+        transactions.add(Transactions("Safaricom Offers", "- Ksh 200","2.00 am"))
+        transactions.add(Transactions("Test Chama", "- Ksh 1,200","9.00 pm"))
+        transactions.add(Transactions(" Kazi Yetu", "- Ksh 1,200","9.00 am"))
+        transactions.add(Transactions("Vijana Kazi", "- Ksh 1,200","9.00 am"))
 
     }
 

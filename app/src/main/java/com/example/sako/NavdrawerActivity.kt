@@ -26,8 +26,8 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         setContentView(R.layout.activity_navdrawer)
 
         val cirleImg  = findViewById(R.id.circleImg) as ImageView
-        val topUpImg = findViewById<ImageView>(R.id.image_topup)
-        val witdrawImg = findViewById<ImageView>(R.id.imageWithdraw)
+//        val topUpImg = findViewById<ImageView>(R.id.image_topup)
+//        val witdrawImg = findViewById<ImageView>(R.id.imageWithdraw)
         val loanImg = findViewById<ImageView>(R.id.loanimg)
          setupNavigation()
 
@@ -140,8 +140,7 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
              //else -> super.oonNavigationItemSelected(MenuItem)
 
             R.id.navigation_savings -> {
-                this.startActivity(Intent(this, SavingsActivity::class.java))
-                return true
+
 
             }
             R.id.nav_rate ->{
