@@ -1,13 +1,16 @@
 package com.example.sako.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sako.NavdrawerActivity
 import com.example.sako.R
 import com.example.sako.adapters.TransactionsAdapter
 import com.example.sako.model.Transactions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TransactionsActivity : AppCompatActivity() {
 
@@ -19,6 +22,8 @@ class TransactionsActivity : AppCompatActivity() {
         
         transactions = ArrayList()
         addTransactions()
+
+        setupNavigation()
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -38,5 +43,32 @@ class TransactionsActivity : AppCompatActivity() {
         transactions.add(Transactions(" Kazi Yetu", "Ksh 1,200","9.00 am"))
         transactions.add(Transactions("Vijana Kazi", "Ksh 1,200","9.00 am"))
 
+    }
+
+    /**
+     * bottom navigation
+     */
+    private fun setupNavigation() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, NavdrawerActivity::class.java)
+                    startActivity(intent)
+                    super.onOptionsItemSelected(item)
+                }
+                R.id.history -> {
+                    val intent = Intent(this,TransactionsActivity::class.java)
+                    startActivity(intent)
+                    super.onOptionsItemSelected(item)
+                }
+                R.id.navigation_account -> {
+                    val intent = Intent(this,AccountActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> true
+            }
+        }
     }
 }

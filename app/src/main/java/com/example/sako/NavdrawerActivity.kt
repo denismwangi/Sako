@@ -14,6 +14,7 @@ import androidx.core.view.GravityCompat
 import com.example.grindview.adapters.DashboardAdapters
 import com.example.grindview.model.DashboardItem
 import com.example.sako.ui.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_navdrawer.*
 
 class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -28,25 +29,30 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val topUpImg = findViewById<ImageView>(R.id.image_topup)
         val witdrawImg = findViewById<ImageView>(R.id.imageWithdraw)
         val loanImg = findViewById<ImageView>(R.id.loanimg)
-
+         setupNavigation()
 
 
         cirleImg.setOnClickListener{
             val intent = Intent(this,CirclesActivity::class.java)
             startActivity(intent)
         }
-       topUpImg.setOnClickListener{
-            val intent = Intent(this,TransactionsActivity::class.java)
-            startActivity(intent)
-        }
-        witdrawImg.setOnClickListener{
-            val intent = Intent(this,AccountActivity::class.java)
-            startActivity(intent)
-        }
+//       topUpImg.setOnClickListener{
+//            val intent = Intent(this,TransactionsActivity::class.java)
+//            startActivity(intent)
+//        }
+//        witdrawImg.setOnClickListener{
+//            val intent = Intent(this,AccountActivity::class.java)
+//            startActivity(intent)
+//        }
         loanImg.setOnClickListener{
             val intent = Intent(this,LoansActivity::class.java)
             startActivity(intent)
         }
+
+
+
+
+
 
 
 
@@ -78,6 +84,34 @@ class NavdrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         drawerToggle.syncState()
 
     }
+
+    private fun setupNavigation() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+//                    val intent = Intent(this,NavdrawerActivity::class.java)
+//                    startActivity(intent)
+                    super.onOptionsItemSelected(item)
+                }
+                R.id.history -> {
+                    val intent = Intent(this,TransactionsActivity::class.java)
+                    startActivity(intent)
+                     super.onOptionsItemSelected(item)
+                }
+                R.id.navigation_account -> {
+                    val intent = Intent(this,AccountActivity::class.java)
+                    startActivity(intent)
+                    true
+            }
+            else -> true
+            }
+        }
+    }
+
+
+
+
     /**
      * implementing Drawer NavigationView.OnNavigationItemSelectedListener to open other activities menu item is clicked
      * dennis 25/04/2020

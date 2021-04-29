@@ -30,6 +30,8 @@ import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.widget.SearchView
 import androidx.core.widget.addTextChangedListener
+import com.example.sako.NavdrawerActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -48,6 +50,8 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
         saccos  = ArrayList()
         getCircles()
+
+        setupNavigation()
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -128,6 +132,31 @@ class CirclesActivity : AppCompatActivity(), onCircleClickListener {
 
     }
 
-
+    /**
+     * bottom navigation
+     */
+    private fun setupNavigation() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        navView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, NavdrawerActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.history -> {
+                    val intent = Intent(this,TransactionsActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_account -> {
+                    val intent = Intent(this,AccountActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> true
+            }
+        }
+    }
 
 }
